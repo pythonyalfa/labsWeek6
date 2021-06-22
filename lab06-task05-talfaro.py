@@ -14,7 +14,7 @@ def addtoAddressBook(name):
 
 
 # writing to csv file
-    with open("addresses.csv", 'a') as csvfile:
+    with open("github/simpleCsvParser/addresses.csv", 'a') as csvfile:
         #creating a csv writer object
         writeToFile = csv.writer(csvfile)
     #writing the data rows
@@ -32,29 +32,19 @@ def addtoAddressBook(name):
 
 name = input("Enter name: ")
 
-with open("addresses.csv", newline='') as addressFile:
+with open("github/simpleCsvParser/addresses.csv", newline='') as addressFile:
     addressReader = csv.DictReader(addressFile, delimiter=",")
     for allRows in addressReader:
         #print(allRows)
         #addressFile.close()
 
 
-        with open("addresses.csv", newline='') as addressFile2:
+        with open("github/simpleCsvParser/addresses.csv", newline='') as addressFile2:
             addressReader2 = csv.DictReader(addressFile2, delimiter=",")
             for row in addressReader2:
-            #print(row)                 Strangely enough this printed the row the name was in but the assignment wants the address
-                if row['Name'] == name:
-                    print("Address: ",(row['Address']))
-            else:
+            #   Strangely enough this printed the row the name was in but the assignment wants the address
 
-                askToAdd = input("Add name to list (y/n): ")
-                if askToAdd != "y":
-                    pass
-                else:
-                    addtoAddressBook(name)
+            if row['Name'] == name:
+                print("Address: ",(row['Address']))
 
-
-
-
-
-    addressFile2.close()
+                addressFile2.close()
