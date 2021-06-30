@@ -10,11 +10,49 @@
 # Enter calculation: div 10 5                   Quotient: 2
 # Enter calculation: exp 3 2                    Power: 9
 # Enter calculation: mod 3 12                   Modulus: 3
+import math
 
 
 
-def add($1):
+#def sub($1):
 
-def sub($1):
+#def mul($1):
 
-def mul($1):
+#def exp($1):
+
+#def mod($1):
+
+
+
+
+
+
+
+        #    print([myvar**2 for myvar in mylist])
+
+
+
+
+
+
+#main()
+
+    #print(x)
+    #for int(i) in takeInput.split(" "):
+
+     #   if int(i.isdigit()):
+      #      sum+=i
+       #     print(sum)
+
+
+# Printing output
+   # print(Output)
+    #pass
+    #if takeInput[0] == "add":
+     #   add(takeInput)
+    #else:
+     #   pass
+#pass
+
+
+

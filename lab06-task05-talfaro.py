@@ -5,46 +5,27 @@
 
 import csv
 
-def addtoAddressBook(name):
-    address = input("Address: ")
-    # field names
+def main():
+    name = "Josephine"
+    with open("addresses.csv", "r") as addressFile:
+        f = csv.DictReader(addressFile)
+        for row in addressFile:
+            if row[0] == name:
+                print("Address: ", (row[1]))
+            if row[0] != name:
+                addressFile = open("addresses.csv", "a+")
+                ask = input("Name not in address book, would you like to add? yes / no ")
+            if ask == "no":
+                for row in addressFile:
+                    print(row)
+            if ask == "yes":
+                address = input("Address: ")
+                addressFile.write(f"\n{name}:{address}\n")
 
 
-    # name of csv file
+    addressFile.close()
 
+main()
 
-# writing to csv file
-    with open("github/simpleCsvParser/addresses.csv", 'a') as csvfile:
-        #creating a csv writer object
-        writeToFile = csv.writer(csvfile)
-    #writing the data rows
-        writeToFile.writerow(name)
-        writeToFile.writerow(address)
-
-        #writeToFile.writerow({"Name" : (name), "Address": (address)})
-    return name, address
-
-
-
-
-
-
-
-name = input("Enter name: ")
-
-with open("github/simpleCsvParser/addresses.csv", newline='') as addressFile:
-    addressReader = csv.DictReader(addressFile, delimiter=",")
-    for allRows in addressReader:
-        #print(allRows)
-        #addressFile.close()
-
-
-        with open("github/simpleCsvParser/addresses.csv", newline='') as addressFile2:
-            addressReader2 = csv.DictReader(addressFile2, delimiter=",")
-            for row in addressReader2:
-            #   Strangely enough this printed the row the name was in but the assignment wants the address
-
-            if row['Name'] == name:
-                print("Address: ",(row['Address']))
-
-                addressFile2.close()
+#for row in addressReader:
+ #   print(row)
